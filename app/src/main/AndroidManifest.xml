@@ -24,8 +24,10 @@
             android:name=".NewPatientActivity"
             android:label="scale."
             android:parentActivityName=".ListActivity" />
-        <activity android:name=".PatientProfileActivity"
-            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".PatientProfileActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>
