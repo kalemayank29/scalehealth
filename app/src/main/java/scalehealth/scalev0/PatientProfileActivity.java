@@ -3,15 +3,19 @@ package scalehealth.scalev0;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class PatientProfileActivity extends AppCompatActivity {
+public class PatientProfileActivity extends AppCompatActivity implements DocumentsAdapter.ItemClickListener {
 
     Button oncoChat;
+    DocumentsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +30,15 @@ public class PatientProfileActivity extends AppCompatActivity {
                 startActivity(chatIntent);
             }
         });
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rvNumbers);
+        int numberOfColumns = 6;
+        recyclerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
+        adapter = new DocumentsAdapter(this);
+        adapter.setClickListener(this);
+        recyclerView.setAdapter(adapter);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,4 +68,9 @@ public class PatientProfileActivity extends AppCompatActivity {
 
         }
     }
+    @Override
+    public void onItemClick(View view, int position) {
+        Log.i("TAG", "You clicked number " + adapter.getItem(position) + ", which is at cell position " + position);
+    }
+
 }
