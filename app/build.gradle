@@ -23,6 +23,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:recyclerview-v7:26.0.+'
     compile 'com.android.support:cardview-v7:26.0.+'
+    compile 'io.smooch:core:latest.release'
+    compile 'io.smooch:ui:latest.release'
     //compile 'co.intentservice.android-chat-ui:chat-ui:0.1.1'
    // compile 'co.devcenter.square:android-ui-library:0.1'
     implementation 'com.android.support:appcompat-v7:26.0.2'

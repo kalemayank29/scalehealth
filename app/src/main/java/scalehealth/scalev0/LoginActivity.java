@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent patientList = new Intent(LoginActivity.this, ListActivity.class);
+               Intent patientList = new Intent(LoginActivity.this, ChatActivity.class);
                startActivity(patientList);
                finish();
             }
