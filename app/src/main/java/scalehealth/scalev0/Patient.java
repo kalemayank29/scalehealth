@@ -4,19 +4,7 @@ package scalehealth.scalev0;
  * Created by mayank on 9/12/17.
  */
 
-/*
-INT id
-INT doctorId
-String date
-String name
-INT age
-BOOL sex
-INT bloodGroup
-String phone
-String photoId
-String note
-String[] documents
- */
+//diagnosis field??
 
 public class Patient {
 
