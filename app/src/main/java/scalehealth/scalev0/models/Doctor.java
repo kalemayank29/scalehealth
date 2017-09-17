@@ -1,4 +1,4 @@
-package scalehealth.scalev0;
+package scalehealth.scalev0.models;
 
 /**
  * Created by mayank on 9/12/17.
@@ -9,14 +9,24 @@ public class Doctor {
     private int id;
     private String date;
     private boolean oncologist;
-    private float latitude;
-    private float longitude;
+    private double latitude;
+    private double longitude;
     private String name;
     private String phone;
     private String username;
     private String password;
 
     public Doctor() {
+    }
+
+    public Doctor(boolean oncologist, double latitude, double longitude, String name, String phone, String username, String password) {
+        this.oncologist = oncologist;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.name = name;
+        this.phone = phone;
+        this.username = username;
+        this.password = password;
     }
 
     public int getId() {
@@ -43,7 +53,7 @@ public class Doctor {
         this.oncologist = oncologist;
     }
 
-    public float getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
@@ -51,7 +61,7 @@ public class Doctor {
         this.latitude = latitude;
     }
 
-    public float getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 

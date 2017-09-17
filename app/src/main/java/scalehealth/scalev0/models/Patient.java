@@ -1,4 +1,4 @@
-package scalehealth.scalev0;
+package scalehealth.scalev0.models;
 
 /**
  * Created by mayank on 9/12/17.
