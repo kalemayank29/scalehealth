@@ -12,6 +12,6 @@ public class SmoochApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Smooch.init(this, "02dtlsm8hi2b22woayehjsxk2");
+      //  Smooch.init(this, "02dtlsm8hi2b22woayehjsxk2");
     }
 }

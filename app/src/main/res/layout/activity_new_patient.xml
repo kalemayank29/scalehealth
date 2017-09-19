@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:hint="Patient Full Name"
             android:textSize="20dp"
+            android:id="@+id/name"
             android:layout_marginTop="30dp"
             />
 
@@ -35,7 +36,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Age"
-            android:textSize="20dp" />
+            android:id="@+id/age"
+            android:textSize="20dp"
+            android:inputType="number"/>
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
@@ -59,13 +62,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Blood Group"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:id="@+id/blood_group"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Phone Number"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:id="@+id/phone"
+            android:inputType="number"/>
 
         <LinearLayout
             android:layout_width="wrap_content"

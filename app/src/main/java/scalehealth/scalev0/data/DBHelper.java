@@ -41,7 +41,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 ScaleContract.PatientInfo.COLUMN_NAME + " TEXT NOT NULL," +
                 ScaleContract.PatientInfo.COLUMN_AGE + " INTEGER NOT NULL," +
                 ScaleContract.PatientInfo.COLUMN_SEX + " INTEGER NOT NULL," +
-                ScaleContract.PatientInfo.COLUMN_BLOOD_GROUP + " INTEGER NOT NULL," +
+                ScaleContract.PatientInfo.COLUMN_BLOOD_GROUP + " TEXT NOT NULL," +
                 ScaleContract.PatientInfo.COLUMN_PHONE + " TEXT NOT NULL," +
                 ScaleContract.PatientInfo.COLUMN_PHOTO_ID + " TEXT NOT NULL," +
                 ScaleContract.PatientInfo.COLUMN_NOTE + " LONGTEXT" +

@@ -1,21 +1,23 @@
 package scalehealth.scalev0.models;
 
+import java.io.Serializable;
+
 /**
  * Created by mayank on 9/12/17.
  */
 
 //diagnosis field??
 
-public class Patient {
+public class Patient implements Serializable{
 
     private int id;
     private int doctorId;
     private String date;
     private String name;
     private int age;
-    private boolean sex;
-    private int bloodGroup;
-    private String phone;
+    private int sex;
+    private String bloodGroup;      //  TODO: Implement hash table to convert into integer....
+    private String phone;           // TODO: Implement international phone codes
     private String photoId;
     private String note;
     private String[] documents;
@@ -64,19 +66,19 @@ public class Patient {
         this.age = age;
     }
 
-    public boolean isSex() {
+    public int isSex() {
         return sex;
     }
 
-    public void setSex(boolean sex) {
+    public void setSex(int sex) {
         this.sex = sex;
     }
 
-    public int getBloodGroup() {
+    public String getBloodGroup() {
         return bloodGroup;
     }
 
-    public void setBloodGroup(int bloodGroup) {
+    public void setBloodGroup(String bloodGroup) {
         this.bloodGroup = bloodGroup;
     }
 

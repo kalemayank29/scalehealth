@@ -12,48 +12,57 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import scalehealth.scalev0.models.Patient;
+
 /**
  * Created by mayank on 9/9/17.
  */
 
 public class PatientRecyclerAdapter extends RecyclerView.Adapter<PatientRecyclerAdapter.PatientHolder> {
 
-    private ArrayList<String> patientList;
+    private ArrayList<Patient> patientList;
 
     public static class PatientHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView patientName;
         private TextView patientAge;
-        private TextView patientDiagnosis;
+        private TextView patientSex;
         private final Context context;
+
 
         public PatientHolder(View v) {
             super(v);
             context = v.getContext();
             patientName = (TextView) v.findViewById(R.id.patientName);
             patientAge = (TextView) v.findViewById(R.id.patientAge);
-            patientDiagnosis = (TextView) v.findViewById(R.id.patientDiagnosis);
+            patientSex = (TextView) v.findViewById(R.id.patientSex);
             v.setOnClickListener(this);
         }
 
 
         @Override
         public void onClick(View v) {
+           // int itemPosition = getChildLayoutPosition(v);
+
             Intent profileIntent = new Intent(context, PatientProfileActivity.class);
             context.startActivity(profileIntent);
             Log.d("RecyclerView", "CLICK!");
         }
 
-        public void bindPatient(String name) {
-            patientName.setText(name);
-            patientAge.setText("24 years old female");
-            patientDiagnosis.setText("Merkel Cell Carcinoma");
+        public void bindPatient(Patient patient) {
+            patientName.setText(patient.getName());
+            if(patient.isSex() == 0) patientSex.setText("Male");
+            else {
+                patientSex.setText("Female");
+            }
+            patientAge.setText(Integer.toString(patient.getAge()));
+            //patientDiagnosis.setText("Merkel Cell Carcinoma");
 
         }
     }
 
 
-    public PatientRecyclerAdapter(ArrayList<String> patients) {
+    public PatientRecyclerAdapter(ArrayList<Patient> patients) {
         patientList = patients;
     }
 
@@ -67,8 +76,8 @@ public class PatientRecyclerAdapter extends RecyclerView.Adapter<PatientRecycler
 
     @Override
     public void onBindViewHolder(PatientRecyclerAdapter.PatientHolder holder, int position) {
-        String patientName = patientList.get(position);
-        holder.bindPatient(patientName);
+        Patient patient = patientList.get(position);
+        holder.bindPatient(patient);
 
     }
 
@@ -76,4 +85,6 @@ public class PatientRecyclerAdapter extends RecyclerView.Adapter<PatientRecycler
     public int getItemCount() {
         return patientList.size();
     }
+
+
 }

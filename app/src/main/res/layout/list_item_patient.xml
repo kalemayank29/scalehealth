@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:text="diagnosis"
                 android:textSize="12sp"
-                android:id="@+id/patientDiagnosis"
+                android:id="@+id/patientSex"
                 android:padding="4dp"/>
 
 
